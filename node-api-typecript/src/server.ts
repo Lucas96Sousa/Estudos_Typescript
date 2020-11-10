@@ -18,6 +18,7 @@ export class SetupServer extends Server {
 
   private setupExpress(): void {
     this.app.use(bodyParser.json());
+    this.app.use(bodyParser.urlencoded({extended: false}))
   }
 
   private setupControllers(): void {
