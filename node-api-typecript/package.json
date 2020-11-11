@@ -12,7 +12,8 @@
   "homepage": "htps://github.com/lucas96sousa/Estudos_Typescript#readme",
   "scripts": {
     "build": "tsc",
-    "test": "jest --projects ./test --runInBand",
+    "test:functional": "jest --projects ./test --forceExit --runInBand",
+    "test:unit": "jest",
     "start": "yarn build && node dist/src/index.js",
     "lint": "eslint ./src ./test --ext .ts",
     "lint:fix": "eslint ./src ./test --ext .ts --fix",
