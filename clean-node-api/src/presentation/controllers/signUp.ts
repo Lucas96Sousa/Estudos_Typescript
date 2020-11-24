@@ -7,7 +7,7 @@ import { badRequest } from '../helpers/http-helper'
 export class SignUpController {
   // @ts-expect-error
   handle (httpRequest: HttpRequest): HttpResponse {
-    const requiredFields = ['name', 'email', 'password']
+    const requiredFields = ['name', 'email', 'password', 'passwordConfimation']
 
     for (const field of requiredFields) {
       if (!httpRequest.body[field]) {
