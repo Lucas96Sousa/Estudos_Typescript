@@ -4,10 +4,13 @@
   "author": "Lucas Oliveira <lucas996oliveira@gmail.com>",
   "main": "index.js",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "validator": "^13.1.17"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.15",
     "@types/node": "^14.14.8",
+    "@types/validator": "^13.1.0",
     "@typescript-eslint/eslint-plugin": "^4.8.2",
     "@typescript-eslint/parser": "^4.8.2",
     "eslint": "^7.14.0",
