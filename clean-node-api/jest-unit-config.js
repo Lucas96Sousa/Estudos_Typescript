@@ -1,4 +1,4 @@
-const config = require('./jest.conifg');
+const config = require('./jest.config');
 
 config.testMatch = ['**/*.spec.ts'];
-module.expors = config;
+module.exports = config;
