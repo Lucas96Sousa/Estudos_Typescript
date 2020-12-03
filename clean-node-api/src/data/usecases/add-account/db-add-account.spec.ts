@@ -1,4 +1,4 @@
-/*
+
 import { Encrypter } from '../../protocols/encrypter'
 import { DbAccount } from '../add-account/db-add-account'
 
@@ -7,13 +7,24 @@ interface SutTypes {
   encrypterStub: Encrypter
 }
 
+const makeEncrypter = (): Encrypter => {
+  class EncrypterStub implements Encrypter {
+    async encrypt (value: string): Promise<string> {
+      return await new Promise(resolve => resolve('hashed_password'))
+    }
+  }
+
+  return new EncrypterStub()
+}
+
 const makeSut = (): SutTypes => {
   class EncrypterStub {
     async encrypt (value: string): Promise<string> {
       return await new Promise(resolve => resolve('hashed_password'))
     }
   }
-  const encrypterStub = new EncrypterStub()
+
+  const encrypterStub = makeEncrypter()
   const sut = new DbAccount(encrypterStub)
   return {
     sut,
@@ -34,4 +45,3 @@ describe('DbAddAccount Usecase', () => {
     expect(encryptSpy).toHaveBeenCalledWith('valid_password')
   })
 })
-*/
