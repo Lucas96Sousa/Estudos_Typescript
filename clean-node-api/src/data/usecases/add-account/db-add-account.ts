@@ -1,4 +1,4 @@
-import { AddAccount, AddAccountModel } from '../../../domain/usecases/add-account'
+/* import { AddAccount, AddAccountModel } from '../../../domain/usecases/add-account'
 import { AccountModel } from '../../../domain/models/account'
 import { Encrypter } from '../../protocols/encrypter'
 
@@ -13,3 +13,4 @@ export class DbAccount implements AddAccount {
     return await new Promise(resolve => resolve(null))
   }
 }
+*/

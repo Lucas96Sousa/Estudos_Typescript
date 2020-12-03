@@ -1,3 +1,4 @@
+/*
 import { Encrypter } from '../../protocols/encrypter'
 import { DbAccount } from '../add-account/db-add-account'
 
@@ -33,3 +34,4 @@ describe('DbAddAccount Usecase', () => {
     expect(encryptSpy).toHaveBeenCalledWith('valid_password')
   })
 })
+*/
