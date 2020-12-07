@@ -629,6 +629,11 @@
   resolved "https://registry.yarnpkg.com/@types/strip-json-comments/-/strip-json-comments-0.0.30.tgz#9aa30c04db212a9a0649d6ae6fd50accc40748a1"
   integrity sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==
 
+"@types/validator@^13.1.0":
+  version "13.1.1"
+  resolved "https://registry.yarnpkg.com/@types/validator/-/validator-13.1.1.tgz#8d220ae4851a1e745764c7ca72294b6d46aeb533"
+  integrity sha512-/39uXOKe1KV4ElXb8cp0RVyeRn9X1QRwllComMMql+FQ9nhmTx0Yhw+kJtccPSShsjma+KXjW/TiXyGUNqNn+w==
+
 "@types/yargs-parser@*":
   version "15.0.0"
   resolved "https://registry.yarnpkg.com/@types/yargs-parser/-/yargs-parser-15.0.0.tgz#cb3f9f741869e20cce330ffbeb9271590483882d"
@@ -5070,6 +5075,11 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+validator@^13.1.17:
+  version "13.5.1"
+  resolved "https://registry.yarnpkg.com/validator/-/validator-13.5.1.tgz#3926dfdd07a7e7325ab657fe46f2143eac55f076"
+  integrity sha512-s+7LW1Xi0OzPNfGN7Hb2vk0YB/epp9KFHHGC5JtqZOE1dUkN4ULPFZAQ1inCu7ceAsWmOJu6sn9cnwm3R+ghWQ==
 
 verror@1.10.0:
   version "1.10.0"
