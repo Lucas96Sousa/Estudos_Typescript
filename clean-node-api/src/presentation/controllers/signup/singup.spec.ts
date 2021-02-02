@@ -13,14 +13,14 @@ const makeEmailValidator = (): EmailValidator => {
 
 const makeAddAccount = (): AddAccount => {
   class AddAccountStub implements AddAccount {
-    add (account: AddAccountModel): AccountModel {
+    async add (account: AddAccountModel): Promise<AccountModel> {
       const fakeAccount = {
         id: 'valid_id',
         name: 'valid_name',
         email: 'valid_email@mail.com',
         password: 'valid_password'
       }
-      return fakeAccount
+      return await new Promise(resolve => resolve(fakeAccount))
     }
   }
   return new AddAccountStub()
@@ -158,8 +158,8 @@ describe('SignUp Controller', () => {
 
   test('Should return 500 if AddAccount throws', async () => {
     const { sut, addAccountStub } = makeSut()
-    jest.spyOn(addAccountStub, 'add').mockImplementationOnce(() => {
-      throw new Error()
+    jest.spyOn(addAccountStub, 'add').mockImplementationOnce(async () => {
+      return await new Promise((resolve, reject) => reject(new Error()))
     })
     const httpRequest = {
       body: {
@@ -190,7 +190,7 @@ describe('SignUp Controller', () => {
     }
 
     await sut.handle(httpRequest)
-    await expect(isValidSpy).toHaveBeenLastCalledWith('any_email@mail.com')
+    expect(isValidSpy).toHaveBeenLastCalledWith('any_email@mail.com')
   })
 
   test('Should call AddAccount with correct values', async () => {
@@ -206,7 +206,7 @@ describe('SignUp Controller', () => {
     }
 
     await sut.handle(httpRequest)
-    await expect(addSpy).toHaveBeenLastCalledWith({
+    expect(addSpy).toHaveBeenLastCalledWith({
       name: 'any_name',
       email: 'any_email@mail.com',
       password: 'any_password'
@@ -224,9 +224,8 @@ describe('SignUp Controller', () => {
       }
     }
     const httpResponse = await sut.handle(httpRequest)
-
     expect(httpResponse.statusCode).toBe(200)
-    await expect(httpResponse.body).toEqual({
+    expect(httpResponse.body).toEqual({
       id: 'valid_id',
       name: 'valid_name',
       email: 'valid_email@mail.com',
