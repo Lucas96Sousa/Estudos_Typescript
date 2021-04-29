@@ -3,3 +3,4 @@ dist
 coverage
 yarn.lock
 env.ts
+globalConfig.json
