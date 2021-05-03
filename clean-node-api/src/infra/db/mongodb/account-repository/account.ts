@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { AddAccountRepository } from '../../../../data/protocols/add-account-repository'
 import { AccountModel } from '../../../../domain/models/account'
 import { AddAccountModel } from '../../../../domain/usecases/add-account'
@@ -10,3 +11,17 @@ export class AccountMongoRepository implements AddAccountRepository {
     return MongoHelper.map(result.ops[0])
   }
 }
+=======
+import { AddAccountRepository } from '../../../../data/protocols/add-account-repository'
+import { AccountModel } from '../../../../domain/models/account'
+import { AddAccountModel } from '../../../../domain/usecases/add-account'
+import { MongoHelper } from '../helpers/mongo-helper'
+
+export class AccountMongoRepository implements AddAccountRepository {
+  async add(accountData: AddAccountModel): Promise<AccountModel> {
+    const accountCollection = await MongoHelper.getColletction('accounts')
+    const result = await accountCollection.insertOne(accountData)
+    return MongoHelper.map(result.ops[0])
+  }
+}
+>>>>>>> 743bac7009e23c29b1b1113fd1e38ec7b925e534

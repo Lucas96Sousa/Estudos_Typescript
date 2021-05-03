@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 node_modules
 dist
 coverage
@@ -5,3 +6,11 @@ yarn.lock
 env.ts
 package.lock-json
 .env
+=======
+node_modules
+dist
+coverage
+yarn.lock
+env.ts
+globalConfig.json
+>>>>>>> 743bac7009e23c29b1b1113fd1e38ec7b925e534
